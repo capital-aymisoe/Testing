@@ -194,33 +194,33 @@ namespace Testing.Controllers
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
         }
-        //private static DataSet SampleData()
-        //{
-        //    DataSet sampleDataSet = new DataSet();
-        //    sampleDataSet.Locale = CultureInfo.InvariantCulture;
-        //    DataTable sampleDataTable = sampleDataSet.Tables.Add("SampleData");
+        private static DataSet SampleData()
+        {
+            DataSet sampleDataSet = new DataSet();
+            sampleDataSet.Locale = CultureInfo.InvariantCulture;
+            DataTable sampleDataTable = sampleDataSet.Tables.Add("SampleData");
 
-        //    sampleDataTable.Columns.Add("YYYYMM", typeof(string));
-        //    sampleDataTable.Columns.Add("FingerPrintID", typeof(string));
-        //    sampleDataTable.Columns.Add("StaffType", typeof(string));
-        //    sampleDataTable.Columns.Add("AttandenceDate", typeof(string));
-        //    sampleDataTable.Columns.Add("TimeIn", typeof(string));
-        //    sampleDataTable.Columns.Add("TimeOut", typeof(string));
-        //    DataRow sampleDataRow;
-        //    for (int i = 1; i <= 49; i++)
-        //    {
-        //        sampleDataRow = sampleDataTable.NewRow();
-        //        sampleDataRow["YYYYMM"] = "Cell1: " + i.ToString(CultureInfo.CurrentCulture);
-        //        sampleDataRow["FingerPrintID"] = "Cell2: " + i.ToString(CultureInfo.CurrentCulture);
-        //        sampleDataRow["StaffType"] = "Cell3: " + i.ToString(CultureInfo.CurrentCulture);
-        //        sampleDataRow["AttandenceDate"] = "Cell4: " + i.ToString(CultureInfo.CurrentCulture);
-        //        sampleDataRow["TimeIn"] = "Cell5: " + i.ToString(CultureInfo.CurrentCulture);
-        //        sampleDataRow["TimeOut"] = "Cell6: " + i.ToString(CultureInfo.CurrentCulture);
-        //        sampleDataTable.Rows.Add(sampleDataRow);
-        //    }
+            sampleDataTable.Columns.Add("YYYYMM", typeof(string));
+            sampleDataTable.Columns.Add("FingerPrintID", typeof(string));
+            sampleDataTable.Columns.Add("StaffType", typeof(string));
+            sampleDataTable.Columns.Add("AttandenceDate", typeof(string));
+            sampleDataTable.Columns.Add("TimeIn", typeof(string));
+            sampleDataTable.Columns.Add("TimeOut", typeof(string));
+            DataRow sampleDataRow;
+            for (int i = 1; i <= 49; i++)
+            {
+                sampleDataRow = sampleDataTable.NewRow();
+                sampleDataRow["YYYYMM"] = "Cell1: " + i.ToString(CultureInfo.CurrentCulture);
+                sampleDataRow["FingerPrintID"] = "Cell2: " + i.ToString(CultureInfo.CurrentCulture);
+                sampleDataRow["StaffType"] = "Cell3: " + i.ToString(CultureInfo.CurrentCulture);
+                sampleDataRow["AttandenceDate"] = "Cell4: " + i.ToString(CultureInfo.CurrentCulture);
+                sampleDataRow["TimeIn"] = "Cell5: " + i.ToString(CultureInfo.CurrentCulture);
+                sampleDataRow["TimeOut"] = "Cell6: " + i.ToString(CultureInfo.CurrentCulture);
+                sampleDataTable.Rows.Add(sampleDataRow);
+            }
 
-        //    return sampleDataSet;
-        //}
+            return sampleDataSet;
+        }
         public void InitializeWorkbook(string path)
         {
             using (FileStream file = new FileStream(path, FileMode.Open, FileAccess.Read))
